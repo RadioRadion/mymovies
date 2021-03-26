@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     @user = User
-      .includes(:movies)
+      .includes(movies: :artists)
       .where(user_movies: { favorite: true })
       .find(params[:id])
   end
