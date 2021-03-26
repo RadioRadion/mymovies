@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<% @user.movies.each do |movie| %>
+
+  <h2>----------<%= movie.name %></h2>
+
+
+  <% movie.artists.each do |artist| %>
+    <h3> <%= artist.name %> </h3>
+  <% end %>
+<% end %>
