@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[ edit update destroy ]
 
   # GET /users or /users.json
   def index
@@ -12,7 +12,6 @@ class UsersController < ApplicationController
       .includes(:movies)
       .where(user_movies: { favorite: true })
       .find(params[:id])
-      raise
   end
 
   # GET /users/new
